@@ -1,0 +1,105 @@
+<%@ Master Language="VB" CodeFile="MasterPageAdmin.master.vb" Inherits="MasterPageAdmin" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Untitled Page</title>
+</head>
+<body background="Image/bg.jpg" style="background-repeat: repeat; background-attachment: fixed;
+    background-position: center; text-align: center;">
+    <form id="form1" runat="server">
+        <div>
+            <table border="10" cellpadding="10" cellspacing="10" bordercolor="" style="border-right: #ff6666 10px double;
+                border-top: #ff6666 10px double; border-left: #ff6666 10px double; border-bottom: #ff6666 10px double">
+                <tr>
+                    <td colspan="2">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <asp:LoginView ID="LoginView1" runat="server">
+                            <LoggedInTemplate>
+                                <strong><span style="font-size: 14pt; color: #ff0000; font-family: Comic Sans MS">Welcome
+                                    -&nbsp;<asp:LoginName ID="LoginName1" runat="server" />
+                                </span></strong>
+                                <asp:LoginStatus ID="LoginStatus1" runat="server" Font-Bold="True" Font-Names="Comic Sans MS"
+                                    Font-Size="14pt" Font-Underline="False" ForeColor="#FF0000" Style="color: white;
+                                    background-color: red" LogoutPageUrl="~/Home.aspx" OnLoggingOut="LoginStatus1_LoggingOut" />
+                            </LoggedInTemplate>
+                            <AnonymousTemplate>
+                                <span style="color: #ff0000"><strong><span style="font-size: 14pt; font-family: Comic Sans MS">
+                                    Welcome,</span></strong> </span>
+                                <asp:LoginStatus ID="LoginStatus1" runat="server" Font-Bold="True" Font-Names="Comic Sans MS"
+                                    Font-Size="14pt" Font-Underline="False" ForeColor="#FF0000" Style="color: white;
+                                    background-color: red" />
+                            </AnonymousTemplate>
+                        </asp:LoginView>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <marquee behavior="Alternate" direction="right" scrollamount="10">
+                    <asp:Image ID="Image1" runat="server" Height="103px" ImageUrl="~/Image/assorted mini veggies.jpg"
+                        Width="160px" />
+                    <asp:Image ID="Image2" runat="server" Height="101px" ImageUrl="~/Image/drum fish.jpg"
+                        Width="150px" />
+                    <asp:Image ID="Image3" runat="server" Height="100px" ImageUrl="~/Image/F162[1].jpg"
+                        Width="148px" />
+                    <asp:Image ID="Image4" runat="server" Height="100px" ImageUrl="~/Image/green beans.jpg"
+                        Width="138px" />
+                    <asp:Image ID="Image5" runat="server" Height="101px" ImageUrl="~/Image/iceberg lattuce.jpg"
+                        Width="156px" />
+                    <asp:Image ID="Image6" runat="server" Height="100px" ImageUrl="~/Image/pF003966[1].jpg"
+                        Width="138px" />
+                    <asp:Image ID="Image7" runat="server" Height="100px" ImageUrl="~/Image/rebay steak.jpg"
+                        Width="154px" />
+                   </marquee>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" rowspan="1">
+                        <asp:Menu ID="Menu2" runat="server" BackColor="white" BorderColor="#FF8080" BorderStyle="Solid"
+                            DynamicHorizontalOffset="2" Font-Bold="True" Font-Names="Comic Sans MS" Font-Size="Medium"
+                            ForeColor="Red" Orientation="Horizontal" PathSeparator="|" StaticSubMenuIndent="10px"
+                            Width="1px">
+                            <Items>
+                                <asp:MenuItem Text="Master" Value="Master">
+                                    <asp:MenuItem NavigateUrl="~/FoodMaster.aspx" Text="Food Master" Value="Item"></asp:MenuItem>
+                                </asp:MenuItem>
+                                <asp:MenuItem Text="Reports" Value="Reports">
+                                    <asp:MenuItem NavigateUrl="~/ClientDetailReport.aspx" Text="Client Detail" Value="User Detail">
+                                    </asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/ProductDetailReport.aspx" Text="Product Detail" Value="Categorywise Flowers">
+                                    </asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/CartDetailReport.aspx" Text="Cart Detail" Value="Cart Detail">
+                                    </asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/PaymentDetailReport.aspx" Text="Payment Detail" Value="Payment Detail">
+                                    </asp:MenuItem>
+                                </asp:MenuItem>
+                            </Items>
+                            <StaticHoverStyle BackColor="#FF8080" ForeColor="White" />
+                            <StaticMenuItemStyle BackColor="White" ForeColor="Red" HorizontalPadding="5px" VerticalPadding="5px" />
+                            <DynamicHoverStyle BackColor="#FF3399" ForeColor="White" />
+                            <DynamicMenuStyle BackColor="White" />
+                            <StaticSelectedStyle BackColor="#FF8080" ForeColor="White" />
+                            <DynamicSelectedStyle BackColor="White" />
+                            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                        </asp:Menu>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 998px" colspan="2">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 998px" colspan="2" bgcolor="#ff8080">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>
